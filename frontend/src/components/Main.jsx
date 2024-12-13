@@ -20,9 +20,9 @@ function Main() {
 
   return (
     <main>
-      <div className="buttons">
-      <button onClick={handleSingleInputClick}>Показать один input</button>
-      <button onClick={handleMultipleQuestionsClick}>Показать вопросы</button>
+      <div className="buttons" id='question'>
+      <button onClick={handleSingleInputClick}>Текст</button>
+      <button onClick={handleMultipleQuestionsClick}>Вопросы</button>
       </div>
       {showSingleInput && <OneQuestion />}
       {showMultipleQuestions && <ManyQuestion />}

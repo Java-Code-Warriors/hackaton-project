@@ -10,7 +10,10 @@
 }
 
 .oneQuest-form input{
-    width: 80%;
-    height: 400px;
-    border: 1px solid #949494;
+    width: 65%;
+    height: 350px;
+    border: 2px solid #949494;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    margin-bottom: 20px;
 }

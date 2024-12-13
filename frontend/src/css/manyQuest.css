@@ -1,4 +1,5 @@
 .cards{
+    font-family: 'PT_Sans-Web-Bold';
     margin: 0 auto;
     display: flex;
     gap: 70px;
@@ -19,6 +20,33 @@
     
 }
 
+
+.cards label{
+    padding-bottom: 25px;
+}
+
+
+.cards input[type="radio"]{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
 .responce{
     color: #000;
+}
+
+button{
+    font-family: 'PT_Sans-Web-Bold';
+    font-size: 20px;
+    color: white;
+    border: none;
+    padding: 9px 24px;
+    background-color: rgb(255,158,22);
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    border-radius: 25px;
+    margin-bottom: 3vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }

@@ -3,7 +3,27 @@ footer {
     color: white;
     padding: 6vh;
     text-align: center;
-  }
+}
+
+.contact-info{
+  font-family: 'PT_Sans-Web-Bold';
+}
+
+.contact-info p{
+  font-size: 30px;
+  padding: 20px;
+}
+
+.store-info{
+  padding: 10px;
+  Font-family: 'PT_Sans-Web-Bold';
+}
+
+.newsletter{
+  padding-top: 40px;
+  Font-family: 'PT_Sans-Web-Bold';
+}
+
   
 
   

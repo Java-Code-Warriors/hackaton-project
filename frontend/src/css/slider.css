@@ -6,7 +6,7 @@ main {
   }
   
   .popular-gifts h2 {
-    font-family: 'SourceSerifPro';
+    font-family: 'PT_Sans-Web-Bold';
     color: white;
     margin-bottom: 40px;
     font-size: 30px;
@@ -59,7 +59,7 @@ main {
   }
   
   .gift-item p {
-    font-family: 'SourceSerifPro';
+    font-family: 'PT_Sans-Web-Bold';
     font-size: 13px;
     text-wrap: wrap;
     text-align: center;

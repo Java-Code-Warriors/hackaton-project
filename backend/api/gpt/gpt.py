@@ -33,7 +33,7 @@ async def process_gpt(promt_text):
                 "maxTokens": "2000"
             },
             "messages": [
-                {"role": "system", "text": "Ты умный ассистент"},
+                {"role": "system", "text": "Предложи подходящий подарок.  Выведи только названия 5 товаров через запятую.  Все товары должны быть на сайте https://www.dns-shop.ru/"},
                 {"role": "user", "text": promt_text}
             ]
         }

@@ -1,10 +1,30 @@
 .buttons button{
+    font-family: 'PT_Sans-Web-Bold';
+    color: white;
+    border: none;
     padding: 9px 24px;
-    background-color: #FF9E16;
+    background-color: rgb(255,158,22);
     cursor: pointer;
-    border-radius: 18px;
+    border-radius: 25px;
+    width: 175px;
+    margin-top: 12vh;
     margin-bottom: 3vh;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-size: 25px;
 }
+
+.buttons button:active{
+    background-color: #ffcc00;
+    border-color: #ff9900;
+}
+
+.buttons button:focus{
+    background-color: #ffcc00;
+    border-color: #ff9900;
+    outline: none;
+}
+
+
 .buttons button:first-child{
     margin-right: 86px;
 }

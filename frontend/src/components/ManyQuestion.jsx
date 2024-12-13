@@ -64,7 +64,7 @@ const ManyQuestion = () => {
       <div>
         <form onSubmit={handleSubmit} className="cards">
           <div className="card">
-            <label>Какой у вас пол?</label>
+            <label>Пол человека, которому вы хотите подарить подарок?</label>
             {genderOptions.map((option) => (
               <div key={option.value}>
                 <input
@@ -81,7 +81,7 @@ const ManyQuestion = () => {
           </div>
   
           <div className="card">
-            <label>Какой у вас бюджет?</label>
+            <label>На какой бюджет вы рассчитываете?</label>
             {budgetOptions.map((option) => (
               <div key={option.value}>
                 <input
@@ -98,7 +98,7 @@ const ManyQuestion = () => {
           </div>
   
           <div className="card">
-            <label>Для чего подарок?</label>
+            <label>Что предпочитаете?</label>
             {purposeOptions.map((option) => (
               <div key={option.value}>
                 <input
