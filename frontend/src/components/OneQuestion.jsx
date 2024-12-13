@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../css/oneQuest.css'
 const OneQuestion = () => {
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -34,15 +35,14 @@ const OneQuestion = () => {
   };
 
   return (
-    <div>
-      <h1>GPT API Form</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="inputText">Введите текст:</label>
+    <div className='oneQuest'>
+      <form onSubmit={handleSubmit} className='oneQuest-form'>
         <input
           type="text"
           id="inputText"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
+          placeholder='Введите ваш текст'
         />
         {inputText.trim() !== '' && (
           <button type="submit" disabled={isLoading}>
