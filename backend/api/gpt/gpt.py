@@ -1,5 +1,4 @@
 import requests
-from fastapi import HTTPException
 import json
 import logging
 
@@ -28,10 +27,11 @@ def process_gpt(text):
             ]
         }
 
-        response = requests.post(YANDEX_ENDPOINT, headers=headers, json=prompt)
+
+        response = requests.post(YANDEX_ENDPOINT, headers=headers, json=prompt, timeout=50)
         response.raise_for_status()
-        data = response.json()
-        result = data["result"]["alternatives"][0]["message"]["text"]
+        result = response.text
+        print(result)
         return result
 
     except requests.exceptions.RequestException as e:
