@@ -1,0 +1,26 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.buttons button{
+    padding: 9px 24px;
+    background-color: #FF9E16;
+    cursor: pointer;
+    border-radius: 18px;
+    margin-bottom: 3vh;
+}
+.buttons button:first-child{
+    margin-right: 86px;
+}
+.form-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-text-input{
+    width: 1200px;
+    height: 550px;
+    font-size: 4vh;
+}
+

@@ -12,7 +12,18 @@ headers = {
 }
 
 
-def process_gpt(text):
+def generate_prompt_from_request(request_obj):
+    prompt_text = (
+        f"Пользователь ищет подарок." +
+        f"Пол: {request_obj.gender}" +
+        f"Бюджет: {request_obj.budget}" +
+        f"Назначение подарка: {request_obj.purpose}"
+        f"Предложи подходящий подарок."
+    )
+    return prompt_text
+
+
+async def process_gpt(promt_text):
     try:
         prompt = {
             "modelUri": "gpt://b1g953keccr0bd9r191t/yandexgpt-lite/latest",
@@ -23,15 +34,20 @@ def process_gpt(text):
             },
             "messages": [
                 {"role": "system", "text": "Ты умный ассистент"},
-                {"role": "user", "text": text}
+                {"role": "user", "text": promt_text}
             ]
         }
 
 
         response = requests.post(YANDEX_ENDPOINT, headers=headers, json=prompt, timeout=50)
         response.raise_for_status()
-        result = response.text
+        data = json.loads(response.text)
+
+        logging.info(f"Ответ от YandexGPT: {json.dumps(data, indent=2)}")
+        
+        result = data["result"]["alternatives"][0]["message"]["text"]
         print(result)
+        
         return result
 
     except requests.exceptions.RequestException as e:

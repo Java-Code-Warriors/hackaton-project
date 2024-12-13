@@ -1,0 +1,104 @@
+main {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .popular-gifts h2 {
+    color: white;
+    margin-bottom: 20px;
+  }
+  /* Стили для карусели */
+  .gift-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .gift-list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .gift-item {
+    flex: 0 0 20.55%; /* Ширина каждой ячейки */
+    margin: 50px;
+    text-align: center;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+    background: linear-gradient(to bottom, #C6511E 0%, #60270E 100%);
+    border-radius: 25px;
+    height: 400px; /* Регулировка высоты */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 25px; /* Добавляем отступ снизу */
+  }
+  
+  .gift-item img {
+    width: 100%;
+    margin-top: 50px;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+  
+  .gift-info {
+    background-color: white;
+    padding: 10px;
+    height: 300px;
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-radius: 10px;
+  }
+  
+  .gift-item p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: white;
+  }
+  
+  .gift-item button {
+    background-color: #C5682A;
+    color: white;
+    border: none;
+    width: 150px;
+    padding: 8px 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    align-self: flex-end; /* Размещаем кнопку справа */
+    position: relative; /* Делаем кнопку позиционируемой */
+    transition: background-color 0.3s ease, transform 0.1s ease;
+  }
+  
+  /* Ховер эффект */
+  .gift-item button:hover {
+    background-color: #e65c00; /* Изменение цвета фона при наведении */
+    cursor: pointer; /* Обеспечиваем отображение курсора */
+  }
+  
+  /* Сжимаем кнопку при нажатии */
+  .gift-item button:active {
+    transform: scale(0.95); /* Эффект сжатия при нажатии */
+  }
+  
+  /* Пример для перемещения кнопки вправо на 20px */
+  .gift-item button {
+    right: 50px; /* Перемещаем кнопку вправо */
+  }
+  
+  
+  .gift-item.active {
+    transform: scale(1.2); /* Увеличиваем центральную ячейку */
+  }
+  
+  .gift-list.paused {
+    transition: none; /* Останавливаем анимацию при наведении */
+  }
+  
+  /* Убираем клон из отображаемой области */
+  .gift-item.clone {
+    display: none;
+  }

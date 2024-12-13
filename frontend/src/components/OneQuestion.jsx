@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-const Questions = () =>{const [inputText, setInputText] = useState('');
+const OneQuestion = () => {
+  const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [apiResponse, setApiResponse] = useState(null);
   const [error, setError] = useState(null);
@@ -11,7 +12,7 @@ const Questions = () =>{const [inputText, setInputText] = useState('');
     setApiResponse(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/gpt", {
+      const response = await fetch("http://127.0.0.1:8000/api/gpt/text", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -43,9 +44,11 @@ const Questions = () =>{const [inputText, setInputText] = useState('');
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
         />
-        <button type="submit" disabled={isLoading}>
-          {isLoading ? "Отправка..." : "Отправить"}
-        </button>
+        {inputText.trim() !== '' && (
+          <button type="submit" disabled={isLoading}>
+            {isLoading ? "Отправка..." : "Отправить"}
+          </button>
+        )}
       </form>
 
       {isLoading && <p>Обработка запроса...</p>}
@@ -58,6 +61,5 @@ const Questions = () =>{const [inputText, setInputText] = useState('');
       )}
     </div>
   );
-}
-
-export default Questions
+};
+export default OneQuestion

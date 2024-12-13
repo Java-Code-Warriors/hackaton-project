@@ -4,28 +4,25 @@ import uvicorn
 from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 from api.gpt.gpt import process_gpt
-
-
-
+from api.gpt.gpt import generate_prompt_from_request
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://localhost:3000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
-class FormData(BaseModel):
+class QuestRequest(BaseModel):
     gender: str
     budget: str
     purpose: str
 
 
-@app.post("/api/gpt", summary="GPT")
+@app.post("/api/gpt/text")
 async def process_data(request: Request):
     try:
         data = await request.json()
@@ -34,27 +31,20 @@ async def process_data(request: Request):
             return JSONResponse({"error": "Missing input data"}, status_code=400)
         result = await process_gpt(input_text)
 
-        return JSONResponse({"result": result})
+        return JSONResponse({"text": result})
     except Exception as e:
         return JSONResponse({"error": str(e)}, status_code=500)
 
-
-@app.post("/api/ml", summary="ml")
-async def submit_form(request: Request):
+@app.post("/api/gpt/quest")
+async def process_quest(request: QuestRequest):
     try:
-        form_data = await request.json()
-        data = FormData(**form_data)
-
-        gender = data.gender
-        budget = data.budget
-        purpose = data.purpose
-        # result = proccesing_ml()
-        
-        return JSONResponse(
-            {"message": "Данные успешно получены", "gender": gender, "budget": budget, "purpose": purpose})
-
+        promt_text = generate_prompt_from_request(request)
+        print(promt_text)
+        result = await process_gpt(promt_text)
+        return JSONResponse({"response": result})
     except Exception as e:
-        return JSONResponse({"message": f"Ошибка: {e}"}, status_code=500)
+        return JSONResponse({"error": str(e)}, status_code=500)
+
 
 
 @app.middleware("http")
