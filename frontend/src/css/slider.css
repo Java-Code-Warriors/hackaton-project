@@ -1,11 +1,16 @@
 main {
     padding: 20px;
     text-align: center;
+    background: url('../img/Mask\ group.png');
+    background-size: 30% auto, auto 30%;
   }
   
   .popular-gifts h2 {
+    font-family: 'SourceSerifPro';
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    font-size: 30px;
+    text-align: center;
   }
   /* Стили для карусели */
   .gift-carousel {
@@ -54,7 +59,10 @@ main {
   }
   
   .gift-item p {
-    font-size: 16px;
+    font-family: 'SourceSerifPro';
+    font-size: 13px;
+    text-wrap: wrap;
+    text-align: center;
     margin-top: 10px;
     color: white;
   }
