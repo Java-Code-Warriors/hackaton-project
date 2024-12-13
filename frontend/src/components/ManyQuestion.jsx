@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../css/manyQuest.css'
 const ManyQuestion = () => {
     const [gender, setGender] = useState('');
     const [budget, setBudget] = useState('');
@@ -61,8 +62,8 @@ const ManyQuestion = () => {
   
     return (
       <div>
-        <form onSubmit={handleSubmit}>
-          <div>
+        <form onSubmit={handleSubmit} className="cards">
+          <div className="card">
             <label>Какой у вас пол?</label>
             {genderOptions.map((option) => (
               <div key={option.value}>
@@ -79,7 +80,7 @@ const ManyQuestion = () => {
             ))}
           </div>
   
-          <div>
+          <div className="card">
             <label>Какой у вас бюджет?</label>
             {budgetOptions.map((option) => (
               <div key={option.value}>
@@ -96,7 +97,7 @@ const ManyQuestion = () => {
             ))}
           </div>
   
-          <div>
+          <div className="card">
             <label>Для чего подарок?</label>
             {purposeOptions.map((option) => (
               <div key={option.value}>
@@ -121,9 +122,9 @@ const ManyQuestion = () => {
         {isLoading && <p>Отправка данных на сервер...</p>}
         {error && <p style={{ color: 'red' }}>Ошибка: {error.message}</p>}
         {serverResponse && (
-          <div>
+          <div className="responce">
             <h2>Ответ от сервера:</h2>
-            <pre>{JSON.stringify(serverResponse, null, 2)}</pre>
+            <p>{JSON.stringify(serverResponse, null, 2)}</p>
           </div>
         )}
       </div>

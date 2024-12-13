@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import OneQuestion from './OneQuestion';
 import ManyQuestion from './ManyQuestion'
+import '../css/main.css'
 
 function Main() {
   const [showSingleInput, setShowSingleInput] = useState(false);
@@ -18,13 +19,14 @@ function Main() {
   };
 
   return (
-    <div>
+    <main>
+      <div className="buttons">
       <button onClick={handleSingleInputClick}>Показать один input</button>
       <button onClick={handleMultipleQuestionsClick}>Показать вопросы</button>
-
+      </div>
       {showSingleInput && <OneQuestion />}
       {showMultipleQuestions && <ManyQuestion />}
-    </div>
+    </main>
   );
 }
 

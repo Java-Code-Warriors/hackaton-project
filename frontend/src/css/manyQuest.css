@@ -1,0 +1,24 @@
+.cards{
+    margin: 0 auto;
+    display: flex;
+    gap: 70px;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.card{
+    background-color:#FF9E16 ;
+    width: 550px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border-radius: 35px;
+    
+}
+
+.responce{
+    color: #000;
+}
